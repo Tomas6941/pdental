@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block title %}Servicios | DentalPro Clínica Dental{% endblock %}
+{% block content %}
+
+<div class="page-header">
+  <div class="ph-inner">
+    <h1>Nuestros Servicios</h1>
+    <p>Cuidado integral en un solo lugar, con los mejores especialistas</p>
+  </div>
+</div>
+
+<div class="servicios-full">
+  <div class="sec-container">
+
+    <div class="sf-section">
+      <div class="sf-img">
+        <img src="https://images.unsplash.com/photo-1598256589560-269e8234c4f2?w=700" alt="Odontología general">
+      </div>
+      <div class="sf-info">
+        <span class="sec-tag">Prevención y cuidado</span>
+        <h2>Odontología General</h2>
+        <p>La base de una boca sana. Realizamos diagnósticos completos, limpiezas profesionales, tratamiento de caries, obturaciones, extracciones y todo lo necesario para mantener tu salud bucal.</p>
+        <ul class="sf-list">
+          <li>Consulta y diagnóstico</li>
+          <li>Limpieza y destartarización</li>
+          <li>Tratamiento de caries</li>
+          <li>Endodoncia (conducto)</li>
+          <li>Extracciones</li>
+        </ul>
+        <a href="{{ url_for('turnos') }}" class="btn btn-main">Pedir turno</a>
+      </div>
+    </div>
+
+    <div class="sf-section sf-reverse">
+      <div class="sf-img">
+        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=700" alt="Estética dental">
+      </div>
+      <div class="sf-info">
+        <span class="sec-tag">Sonrisa perfecta</span>
+        <h2>Estética Dental</h2>
+        <p>Tu sonrisa es tu carta de presentación. Ofrecemos tratamientos estéticos avanzados con resultados naturales y duraderos, utilizando materiales de última generación.</p>
+        <ul class="sf-list">
+          <li>Blanqueamiento dental (láser y domiciliario)</li>
+          <li>Carillas de porcelana</li>
+          <li>Diseño digital de sonrisa</li>
+          <li>Remodelado estético</li>
+          <li>Microrrestauraciones</li>
+        </ul>
+        <a href="{{ url_for('turnos') }}" class="btn btn-main">Pedir turno</a>
+      </div>
+    </div>
+
+    <div class="sf-section">
+      <div class="sf-img">
+        <img src="https://images.unsplash.com/photo-1576671080854-6ef4c5af9e6a?w=700" alt="Ortodoncia">
+      </div>
+      <div class="sf-info">
+        <span class="sec-tag">Corrección de mordida</span>
+        <h2>Ortodoncia</h2>
+        <p>Corregimos la alineación de tus dientes con las técnicas más modernas. Trabajamos con adultos, adolescentes y niños, adaptando el tratamiento a cada caso.</p>
+        <ul class="sf-list">
+          <li>Brackets metálicos</li>
+          <li>Brackets estéticos (cerámica)</li>
+          <li>Alineadores invisibles (Invisalign)</li>
+          <li>Ortopedia maxilar</li>
+          <li>Retención post-ortodoncia</li>
+        </ul>
+        <a href="{{ url_for('turnos') }}" class="btn btn-main">Pedir turno</a>
+      </div>
+    </div>
+
+    <div class="sf-section sf-reverse">
+      <div class="sf-img">
+        <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=700" alt="Implantes">
+      </div>
+      <div class="sf-info">
+        <span class="sec-tag">Solución definitiva</span>
+        <h2>Implantología</h2>
+        <p>Los implantes dentales son la solución más efectiva y duradera para reemplazar dientes faltantes. Con tecnología de carga inmediata, muchos casos pueden resolverse en una sola visita.</p>
+        <ul class="sf-list">
+          <li>Implantes de titanio unitarios</li>
+          <li>Implantes múltiples</li>
+          <li>Carga inmediata (diente en un día)</li>
+          <li>All on 4 / All on 6</li>
+          <li>Injertos óseos</li>
+        </ul>
+        <a href="{{ url_for('turnos') }}" class="btn btn-main">Pedir turno</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block title %}Pedir Turno | DentalPro{% endblock %}
+{% block content %}
+
+<div class="page-header">
+  <div class="ph-inner">
+    <h1>Pedir Turno</h1>
+    <p>Reservá online de manera rápida y sencilla</p>
+  </div>
+</div>
+
+<div class="turnos-page">
+  <div class="sec-container">
+    <div class="tp-grid">
+      <div>
+        <div class="form-card">
+          <h2>Solicitá tu consulta</h2>
+          <p class="form-desc">Completá el formulario y te confirmaremos el turno por email o teléfono en menos de 24 horas.</p>
+          <form method="POST" action="{{ url_for('turnos') }}" class="dental-form">
+            <div class="df-row">
+              <div class="df-group">
+                <label>Nombre completo *</label>
+                <input type="text" name="nombre" required>
+              </div>
+              <div class="df-group">
+                <label>Email *</label>
+                <input type="email" name="email" required>
+              </div>
+            </div>
+            <div class="df-row">
+              <div class="df-group">
+                <label>Teléfono</label>
+                <input type="tel" name="telefono">
+              </div>
+              <div class="df-group">
+                <label>Especialidad / Servicio *</label>
+                <select name="servicio" required>
+                  <option value="">Seleccioná</option>
+                  <option>Odontología General — Consulta y diagnóstico</option>
+                  <option>Odontología General — Limpieza profesional</option>
+                  <option>Estética — Blanqueamiento dental</option>
+                  <option>Estética — Carillas / Diseño de sonrisa</option>
+                  <option>Ortodoncia — Primera consulta</option>
+                  <option>Implantología — Primera consulta</option>
+                  <option>Periodoncia</option>
+                  <option>Odontopediatría</option>
+                  <option>Urgencia odontológica</option>
+                </select>
+              </div>
+            </div>
+            <div class="df-row">
+              <div class="df-group">
+                <label>Fecha preferida *</label>
+                <input type="date" name="fecha" id="fecha" required>
+              </div>
+              <div class="df-group">
+                <label>Horario preferido *</label>
+                <select name="hora" required>
+                  <option value="">Elegí un horario</option>
+                  {% for h in ['08:00','08:30','09:00','09:30','10:00','10:30','11:00','11:30','12:00','14:00','14:30','15:00','15:30','16:00','16:30','17:00','17:30','18:00','18:30','19:00'] %}
+                    <option>{{ h }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+            </div>
+            <div class="df-group">
+              <label>Motivo de consulta o información adicional</label>
+              <textarea name="mensaje" rows="3" placeholder="Contanos brevemente qué querés tratar..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-main btn-full">Solicitar turno</button>
+          </form>
+        </div>
+      </div>
+      <div class="tp-aside">
+        <div class="info-block">
+          <h3>Obras sociales y prepagos</h3>
+          <p>Trabajamos con más de 50 obras sociales. Consultá por la tuya.</p>
+          <div class="obras-tags">
+            <span>OSDE</span><span>Swiss Medical</span><span>IOMA</span><span>Galeno</span>
+            <span>Medicus</span><span>Accord</span><span>Obra Social Docentes</span><span>+ 44 más</span>
+          </div>
+        </div>
+        <div class="info-block">
+          <h3>Horarios</h3>
+          <p>Lun – Vie: 8:00 – 20:00</p>
+          <p>Sábados: 9:00 – 14:00</p>
+          <p>Urgencias: disponibles</p>
+        </div>
+        <div class="info-block info-block-blue">
+          <h3>Urgencias odontológicas</h3>
+          <p>Atendemos urgencias en el día. Llamanos:</p>
+          <a href="tel:01143215678" class="btn btn-main" style="margin-top:12px">📞 (011) 4321-5678</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

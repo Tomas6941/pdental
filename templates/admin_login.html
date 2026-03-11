@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Admin | DentalPro{% endblock %}
+{% block content %}
+<div class="login-page">
+  <div class="login-box">
+    <div class="logo" style="justify-content:center;margin-bottom:24px">
+      <div class="logo-icon"><svg viewBox="0 0 32 32" fill="none"><path d="M16 4C11 4 7 8.5 7 13c0 3 1 5.5 2 7.5C10.5 24 12 26 12 28h8c0-2 1.5-4 3-7.5 1-2 2-4.5 2-7.5 0-4.5-4-9-9-9z" fill="white" opacity="0.9"/></svg></div>
+      <div class="logo-text"><span class="logo-name">DentalPro</span><span class="logo-sub">Admin</span></div>
+    </div>
+    <h2>Panel de administración</h2>
+    <form method="POST" class="dental-form">
+      <div class="df-group"><label>Usuario</label><input type="text" name="usuario" required></div>
+      <div class="df-group"><label>Contraseña</label><input type="password" name="password" required></div>
+      <button type="submit" class="btn btn-main btn-full">Ingresar</button>
+    </form>
+    <div style="text-align:center;margin-top:20px"><a href="{{ url_for('index') }}" style="color:#888;font-size:13px">← Volver al sitio</a></div>
+  </div>
+</div>
+{% endblock %}

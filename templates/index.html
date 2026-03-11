@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% block title %}{{ config.titulo }} | Clínica Dental en Buenos Aires{% endblock %}
+{% block content %}
+
+<section class="hero">
+  <div class="hero-media">
+    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1800" alt="Clínica dental">
+    <div class="hero-grad"></div>
+  </div>
+  <div class="hero-body">
+    <div class="hero-inner">
+      <div class="hero-tag">Clínica Dental — Buenos Aires</div>
+      <h1>{{ config.titulo }}<br><em>{{ config.subtitulo }}</em></h1>
+      <p>Tecnología de punta, profesionales especializados y un espacio diseñado para tu comodidad y bienestar.</p>
+      <div class="hero-ctas">
+        <a href="{{ url_for('turnos') }}" class="btn btn-main">Pedir turno online</a>
+        <a href="{{ url_for('servicios') }}" class="btn btn-light">Nuestros servicios</a>
+      </div>
+      <div class="hero-chips">
+        <span>✓ Obras sociales y prepagos</span>
+        <span>✓ Tecnología digital</span>
+        <span>✓ Urgencias</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="trust-n">+20</span><span>Años de experiencia</span></div>
+    <div class="trust-sep"></div>
+    <div class="trust-item"><span class="trust-n">+8000</span><span>Pacientes atendidos</span></div>
+    <div class="trust-sep"></div>
+    <div class="trust-item"><span class="trust-n">12</span><span>Especialistas</span></div>
+    <div class="trust-sep"></div>
+    <div class="trust-item"><span class="trust-n">4.9★</span><span>Google Reviews</span></div>
+  </div>
+</section>
+
+<section class="servicios-preview">
+  <div class="sec-container">
+    <div class="sec-header">
+      <span class="sec-tag">Especialidades</span>
+      <h2>Cuidado integral de tu salud bucal</h2>
+      <p>Atendemos todas las necesidades odontológicas bajo un mismo techo, con tecnología de última generación.</p>
+    </div>
+    <div class="sv-cards">
+      <a href="{{ url_for('servicios') }}" class="sv-card">
+        <div class="sv-card-icon">🦷</div>
+        <h3>Odontología General</h3>
+        <p>Consultas, diagnóstico, prevención y tratamientos básicos para mantener tu salud bucal.</p>
+      </a>
+      <a href="{{ url_for('servicios') }}" class="sv-card sv-card--blue">
+        <div class="sv-card-icon">😁</div>
+        <h3>Estética Dental</h3>
+        <p>Blanqueamiento, carillas, diseño de sonrisa y tratamientos cosméticos de alta precisión.</p>
+      </a>
+      <a href="{{ url_for('servicios') }}" class="sv-card">
+        <div class="sv-card-icon">🔧</div>
+        <h3>Ortodoncia</h3>
+        <p>Brackets metálicos, estéticos y alineadores invisibles para corregir tu mordida.</p>
+      </a>
+      <a href="{{ url_for('servicios') }}" class="sv-card sv-card--blue">
+        <div class="sv-card-icon">⚙️</div>
+        <h3>Implantes</h3>
+        <p>Implantes de titanio con carga inmediata. La solución definitiva para dientes faltantes.</p>
+      </a>
+      <a href="{{ url_for('servicios') }}" class="sv-card">
+        <div class="sv-card-icon">🩺</div>
+        <h3>Periodoncia</h3>
+        <p>Diagnóstico y tratamiento de encías, raspaje y cirugías periodontales.</p>
+      </a>
+      <a href="{{ url_for('servicios') }}" class="sv-card sv-card--blue">
+        <div class="sv-card-icon">👶</div>
+        <h3>Odontopediatría</h3>
+        <p>Cuidado especializado para niños desde la primera dentición hasta la adolescencia.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="porque-section">
+  <div class="sec-container">
+    <div class="pq-grid">
+      <div class="pq-texto">
+        <span class="sec-tag">¿Por qué elegirnos?</span>
+        <h2>Tu bienestar es nuestra prioridad</h2>
+        <p>En DentalPro combinamos más de 20 años de experiencia con tecnología de última generación para ofrecerte el mejor cuidado bucal de Buenos Aires.</p>
+        <ul class="pq-list">
+          <li>✓ Equipamiento digital de última generación</li>
+          <li>✓ Equipo de 12 especialistas certificados</li>
+          <li>✓ Trabajamos con más de 50 obras sociales</li>
+          <li>✓ Urgencias odontológicas en el día</li>
+          <li>✓ Financiación sin interés</li>
+          <li>✓ Ambiente diseñado para tu comodidad</li>
+        </ul>
+        <a href="{{ url_for('equipo') }}" class="btn btn-main" style="margin-top:24px">Conocé al equipo</a>
+      </div>
+      <div class="pq-img">
+        <img src="https://images.unsplash.com/photo-1588776814546-1ffbb172e9e2?w=800" alt="Tecnología dental">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-turno">
+  <div class="sec-container">
+    <div class="cta-t-inner">
+      <h2>¿Hace cuánto no vas al dentista?</h2>
+      <p>Reservá tu consulta preventiva hoy. Sin costo de consulta para nuevos pacientes.*</p>
+      <a href="{{ url_for('turnos') }}" class="btn btn-white">Pedir turno gratis →</a>
+      <small>*Válido para primera consulta de nuevos pacientes. Sujeto a disponibilidad.</small>
+    </div>
+  </div>
+</section>
+
+<section class="testimonios-section">
+  <div class="sec-container">
+    <div class="sec-header">
+      <span class="sec-tag">Opiniones</span>
+      <h2>Lo que dicen nuestros pacientes</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p>"Excelente atención desde el primer momento. El blanqueamiento quedó increíble y no sentí dolor. 100% recomendable."</p>
+        <strong>— Valentina R.</strong>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p>"Me hice el implante con miedo y terminé sorprendido de lo fácil que fue. El equipo fue muy profesional y contenedor."</p>
+        <strong>— Diego F.</strong>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p>"Llevo a mis hijos desde hace 5 años. Los doctores son muy pacientes con los chicos. El mejor lugar para toda la familia."</p>
+        <strong>— Mariana L.</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

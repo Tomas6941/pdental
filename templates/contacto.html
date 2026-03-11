@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Contacto | DentalPro{% endblock %}
+{% block content %}
+<div class="page-header">
+  <div class="ph-inner">
+    <h1>Contacto</h1>
+    <p>Estamos para responder todas tus consultas</p>
+  </div>
+</div>
+<div class="turnos-page">
+  <div class="sec-container">
+    <div class="tp-grid">
+      <div class="form-card">
+        <h2>Envianos un mensaje</h2>
+        <form method="POST" action="{{ url_for('contacto') }}" class="dental-form">
+          <div class="df-group"><label>Nombre *</label><input type="text" name="nombre" required></div>
+          <div class="df-group"><label>Email *</label><input type="email" name="email" required></div>
+          <div class="df-group"><label>Mensaje *</label><textarea name="mensaje" rows="5" required></textarea></div>
+          <button type="submit" class="btn btn-main btn-full">Enviar mensaje</button>
+        </form>
+      </div>
+      <div class="tp-aside">
+        <div class="info-block">
+          <h3>Información</h3>
+          <p>📍 Av. Santa Fe 1890, CABA</p>
+          <p>📞 (011) 4321-5678</p>
+          <p>✉️ turnos@dentalpro.com.ar</p>
+        </div>
+        <div class="info-block">
+          <h3>Horarios</h3>
+          <p>Lun – Vie: 8:00 – 20:00</p>
+          <p>Sábados: 9:00 – 14:00</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

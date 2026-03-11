@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block title %}Admin | DentalPro{% endblock %}
+{% block content %}
+<div class="admin-page">
+  <div class="admin-bar">
+    <div class="sec-container admin-bar-inner">
+      <h1>Panel de Administración</h1>
+      <a href="{{ url_for('admin_logout') }}" class="btn btn-outline-sm">Cerrar sesión</a>
+    </div>
+  </div>
+  <div class="sec-container admin-body">
+
+    <div class="adm-stats">
+      <div class="adm-stat"><span>{{ turnos|length }}</span><label>Turnos solicitados</label></div>
+      <div class="adm-stat"><span>{{ turnos|selectattr('estado','eq','pendiente')|list|length }}</span><label>Pendientes</label></div>
+      <div class="adm-stat"><span>{{ contactos|length }}</span><label>Consultas</label></div>
+    </div>
+
+    <div class="adm-card">
+      <h2>Configuración del sitio</h2>
+      <form method="POST" action="{{ url_for('admin_panel') }}" class="dental-form">
+        <div class="df-row">
+          <div class="df-group">
+            <label>Título principal</label>
+            <input type="text" name="titulo" value="{{ config.titulo }}">
+          </div>
+          <div class="df-group">
+            <label>Subtítulo</label>
+            <input type="text" name="subtitulo" value="{{ config.subtitulo }}">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-main">Guardar cambios</button>
+      </form>
+    </div>
+
+    <div class="adm-card">
+      <h2>Turnos solicitados</h2>
+      <div class="adm-table-wrap">
+        <table class="adm-table">
+          <thead><tr><th>#</th><th>Nombre</th><th>Email</th><th>Servicio</th><th>Fecha</th><th>Hora</th><th>Estado</th></tr></thead>
+          <tbody>
+            {% for t in turnos|reverse %}
+            <tr>
+              <td>{{ t.id }}</td>
+              <td>{{ t.nombre }}</td>
+              <td>{{ t.email }}</td>
+              <td style="max-width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.servicio }}</td>
+              <td>{{ t.fecha }}</td>
+              <td>{{ t.hora }}</td>
+              <td><span class="status-badge status-{{ t.estado }}">{{ t.estado|capitalize }}</span></td>
+            </tr>
+            {% else %}
+            <tr><td colspan="7" style="text-align:center;color:#888;padding:32px">Sin turnos todavía</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="adm-card">
+      <h2>Consultas de contacto</h2>
+      <div class="adm-table-wrap">
+        <table class="adm-table">
+          <thead><tr><th>Nombre</th><th>Email</th><th>Mensaje</th></tr></thead>
+          <tbody>
+            {% for c in contactos|reverse %}
+            <tr>
+              <td>{{ c.nombre }}</td>
+              <td>{{ c.email }}</td>
+              <td>{{ c.mensaje[:100] }}{% if c.mensaje|length > 100 %}...{% endif %}</td>
+            </tr>
+            {% else %}
+            <tr><td colspan="3" style="text-align:center;color:#888;padding:32px">Sin consultas</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
